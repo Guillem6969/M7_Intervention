@@ -1,11 +1,10 @@
 <?php
 require_once '../vendor/autoload.php';
 error_reporting(ENT_IGNORE);
-//print_r($_FILES["imageFile"]);
+// print_r(value: $_FILES["imageFile"]);
 
 // create object ImageManager
-$managerImage = new \Intervention\Image\ImageManager();
-
+$managerImage = new Intervention\Image\ImageManager();
 // instance object to manipulate
 $imageObject = $managerImage->make($_FILES["imageFile"]["tmp_name"]);
 $imageObject->save("../resources/inputImg/" . $_FILES["imageFile"]["name"]);
